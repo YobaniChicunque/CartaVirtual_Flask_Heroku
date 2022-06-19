@@ -512,18 +512,19 @@ def actualizarRegistro(id):
         image.save('./static/img/' + image_)
 
         empresaModel.actualizarRegistro(name=name, description=description, image='/static/img/' + image_, phone=phone, address=address, email=email, password=password, id=id )
-        
+
         return redirect(url_for('miCuenta'))
 
 #--------ruta, cerrar sesion------------
 @app.route('/logout', methods=["GET", "POST"])
 def logout():
     session.clear()
-    return redirect(url_for('login'))    
+    return redirect(url_for('login'))
 
 
-if __name__ == '__main__':
-  app.run(port = 5000, debug=True)
+#if __name__ == '__main__':
+#  app.run(port = 5000, debug=True)
+
 
 
 
