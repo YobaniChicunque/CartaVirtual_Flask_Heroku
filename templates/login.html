@@ -1,0 +1,44 @@
+
+{% extends 'layout.html' %}
+
+{% block titulo %} Login {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="static/css/style.css">
+
+{% endblock %}
+
+{% block contenido%}
+
+<center>
+  <h1 style="color:white;">Iniciar sesión</h1>
+</center>
+<div class="container">
+  <div class="abs-center">
+    <div class="login">
+      <form action="/login" class=" border-danger p-3 form" method="POST" enctype="multipart/form-data" style="background-color: #f49391d0; border-radius:25px;">
+
+        <div class="form-group">
+          <h5>Email:</h5>
+          <input type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{email}}">
+        </div>
+
+        <div class="form-group">
+          <h5>Contraseña:</h5>
+          <input type="password" class="form-control" placeholder="contraseña" name="password" value="{{password}}">
+        </div>
+      <center>
+        <div class="form-group"><br>
+          <button class="btn btn-danger rounded-pill" >Iniciar sesión</button>
+          
+        </div>
+        <div class= "form-group">
+          <a href="/login/recoverPassword" class="btn"><h6>¿Olvidó su contraseña?</h6></a>
+        </div>
+      </center>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+updateRegister
+{% endblock %}
+
+{% block estilos %}
+
+<style>
+  .abs-center {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .form {
+    width: 450px;
+  }
+</style>
+{% endblock %}
+
+{% block contenido %}
+<br>
+<center>
+  <h2 style="color: rgb(251, 249, 249);">Actualizar perfil empresa</h2> <br>
+</center>
+
+<div class="container">
+  <div class="abs-center">
+    <div class="mb-3">
+    <form action="/editarRegistro/{{usuario.0}}" class=" border-danger p-3 form" method="POST" enctype="multipart/form-data" style="background-color: #f49391d0; border-radius:25px;">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="" name="name" value="{{usuario.1}}">
+        <label for="floatingInput">Nombre</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingDescripcion" placeholder="Descripción" name="description"
+          value="{{usuario.2}}">
+        <label for="floatingDescripcion">Descripción</label>
+      </div>
+
+      <div class="form-control mb-3">
+        <label for="">Imagen</label>
+        <input type="file" class="form-control" id="" placeholder="" name="image" value="">
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingCelular" placeholder="Celular" name="phone"
+          value="{{usuario.4}}">
+        <label for="floatingCelular">Celular</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingDireccion" placeholder="Direccion" name="address"
+          value="{{usuario.5}}">
+        <label for="floatingDireccion">Dirección</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingCorreo" placeholder="Correo" name="email"
+          value="{{usuario.6}}">
+        <label for="floatingCorreo">Correo</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+          value="{{usuario.7}}">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <center>
+      <button class="btn btn-danger rounded-pill" type="submit">Guardar</button> 
+        <a href="/login/miCuenta">
+          <input type="button" class="btn btn-danger rounded-pill" value="Volver">
+        </a>
+      </center>
+    </form>
+  </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
